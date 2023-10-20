@@ -1,0 +1,30 @@
+{
+  "name": "riga-backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "tsc": "tsc",
+    "start": "node build/server.js",
+    "dev": "ts-node-dev src/server.ts",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Santiii4/Riga-Backend.git"
+  },
+  "author": "Santi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Santiii4/Riga-Backend/issues"
+  },
+  "homepage": "https://github.com/Santiii4/Riga-Backend#readme",
+  "dependencies": {
+    "express": "^4.18.2",
+    "typescript": "^5.2.2"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.20",
+    "ts-node-dev": "^2.0.0"
+  }
+}
