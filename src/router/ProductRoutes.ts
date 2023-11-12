@@ -1,13 +1,16 @@
 import express from 'express';
-import { getAllProducts, getProductById } from '../controllers/controllerProducts';
+import { getProducts, getProductImage, addProduct } from '../controllers/controllerProducts'
+import { Router } from 'express';
 
 const router = express.Router();
+
+const controllerProducts = Router();
 
 router.get('/', (_, res) => {
     res.send ('Funciona');
 });
-router.get('/products', getAllProducts);
-router.get('/products/:id', getProductById);
-
+controllerProducts.get('/products', getProducts);
+controllerProducts.get('/productImage/:image', getProductImage);
+controllerProducts.post('/addProduct', addProduct);
 
 export default router;

@@ -1,21 +1,28 @@
 import { Request, Response } from 'express';
-import { getRepository } from 'typeorm';
-import { Product } from '../persistance/Products';
+import { AppDataSource } from '../db'
+import { Product } from '../persistance/Products'
+import { join } from 'path'
 
-export const getAllProducts = async (_, res: Response) => {
-  const productRepository = getRepository(Product);
-  const products = await productRepository.find();
+export const getProducts = async (_: Request, res: Response) => {
+  // coneccioncon la base de datos
+  const products = await AppDataSource.manager.find(Product);
   res.json(products);
-};
+}
 
-export const getProductById = async (req: Request, res: Response) => {
-  const { id } = req.params;
-  const productRepository = getRepository(Product);
-  const product = await productRepository.findOne(id);
+export const getProductImage = (req: Request, res: Response) => {
+  res.sendFile(join(__dirname, '..', 'images', req.params.image))
+}
 
-  if (!product) {
-    return res.status(404).json({ message: 'Product not found' });
-  }
+export const addProduct = async (req: Request, res: Response) => {
+  console.log(req.body);
+  
+  const { name, price, image } = req.body;
+  const newProduct = new Product();
+  newProduct.name = name;
+  newProduct.image = image;
+  newProduct.price = price;
 
-  res.json(product);
-};
+  await AppDataSource.manager.save(newProduct);
+
+  res.send('ProductAdded')
+}
