@@ -1,16 +1,16 @@
 import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm'
 
 @Entity()
-export class product {
+export class Product {
     @PrimaryGeneratedColumn()
     id!: number
 
     @Column()
-    name!: string
+    username!: string
 
     @Column()
-    price!: number
+    gmail!: string
 
     @Column()
-    image!: string
+    password!: boolean
 }

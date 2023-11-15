@@ -1,15 +1,15 @@
 import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm'
 
 @Entity()
-export class product {
+export class Product {
     @PrimaryGeneratedColumn()
     id!: number
 
     @Column()
-    name!: string
+    total!: number
 
     @Column()
-    price!: number
+    object!: string
 
     @Column()
     image!: string

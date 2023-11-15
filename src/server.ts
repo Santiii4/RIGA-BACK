@@ -3,7 +3,7 @@ import  router  from './router/ProductRoutes';
 import controllerProducts from './router/ProductRoutes'
 import cors from 'cors'
 
-import { AppDataSource } from './db';
+import { AppDataSource } from './persistance/config';
 
 const app = express();
 const PORT = 8080
@@ -11,9 +11,10 @@ const PORT = 8080
 app.use(express.json());
 app.use(cors({origin: '*'}));
 
+app.use('/', router)
+
 app.use('/ecommerce', controllerProducts);
 
-// docker run -e MYSQL_ROOT_PASSWORD=1234 -e MYSQL_DATABASE=AromataDB -p 3306:3306 mysql
 app.use('/api', router);
 AppDataSource.initialize()
     .then(() => {

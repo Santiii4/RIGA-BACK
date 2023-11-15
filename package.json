@@ -1,7 +1,7 @@
 {
   "name": "riga-backend",
   "version": "1.0.0",
-  "description": "",
+  "description": "Meter archivos server en una carpeta build y server.ts en una src y ruotes en una router.",
   "main": "index.js",
   "scripts": {
     "tsc": "tsc",
@@ -29,8 +29,9 @@
   },
   "devDependencies": {
     "@types/cors": "^2.8.16",
-    "@types/express": "^4.17.20",
+    "@types/express": "^4.17.21",
     "@types/node": "^20.9.0",
     "ts-node-dev": "^2.0.0"
-  }
+  },
+  "keywords": []
 }
