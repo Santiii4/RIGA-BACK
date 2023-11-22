@@ -6,11 +6,17 @@ export class product {
     id!: number
 
     @Column()
-    name!: string
+    name: string
 
     @Column()
-    price!: number
+    price: number
 
     @Column()
-    image!: string
+    image: string
+    
+constructor(name:string,price:number,image:string){
+    this.name=name
+    this.price=price 
+    this.image=image
+}
 }

@@ -6,7 +6,6 @@ import { product } from './Products'
 
 export default class Db{
     constructor(){}
-
     static getAll(){
         AppDataSource.getRepository(product).find();
     }    

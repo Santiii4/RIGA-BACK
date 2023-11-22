@@ -1,17 +1,16 @@
 import { DataSource } from "typeorm"
-import { Product } from "./Products"
+import { product } from "./Products"
 
 export const AppDataSource = new DataSource({
     type: 'mysql',
     host: '127.0.0.1',
     username: 'root',
     password: '1234',
-    database: 'RigaDB',
+    database: 'rigadb',
     synchronize: true,
     logging: true,
-    entities: [Product],
+    entities: [product],
     subscribers: [],
     migrations: []
 });
 
-AppDataSource.initialize()
