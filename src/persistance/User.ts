@@ -1,16 +1,20 @@
-import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm'
+import {Entity, Column, PrimaryGeneratedColumn} from "typeorm"
 
 @Entity()
-export class Product {
+export default class Usuario{
     @PrimaryGeneratedColumn()
-    id!: number
-
+    id!: number 
     @Column()
-    username!: string
-
+    nombre!:string
+    @Column({unique:true})
+    email!: string  
     @Column()
-    gmail!: string
+    contraseña!: string  
 
-    @Column()
-    password!: boolean
+    constructor(nombre:string, email:string, contraseña:string){
+        this.nombre= nombre;
+        this.email= email;
+        this.contraseña= contraseña;
+    }
+
 }

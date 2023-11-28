@@ -1,37 +1,27 @@
-import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm'
-
+import {Entity, Column, PrimaryGeneratedColumn} from "typeorm"
 @Entity()
-export class product {
-    @PrimaryGeneratedColumn()
-    id!: number
 
-    @Column()
-    name: string
-
-    @Column()
-    descripcion: string
-
-    @Column()
-    price: number
-
-    @Column()
-    image: string
-
-    @Column()
-    quanty: number
+export default class product{
     
-constructor(name:string,descripcion: string,price:number,image:string,quanty: number){
-    this.name=name
-    this.descripcion=descripcion
-    this.price=price 
-    this.image=image
-    this.quanty=quanty
-}
-}
+    @PrimaryGeneratedColumn()
+    id!: number 
+    
+    @Column()
+    nombre!:string
+    
+    @Column()
+    descripcion!: string  
+    
+    @Column()
+    precio!: number
+    
+    @Column()
+    cantidad!: number
 
-
-// "name": "12 Pallets",
-//       "descripcion": "Este servicio implica el transporte de carga desde el origen hasta un punto intermedio o desde un punto intermedio hasta el destino final. El transportista es responsable del transporte y la descarga en el punto intermedio.",
-//       "price": 1.631,
-//       "img": "https://cdn-icons-png.flaticon.com/128/776/776588.png",
-//       "quanty": 1
+    constructor(nombre:string, descripcion:string, precio:number, cantidad:number){
+        this.nombre= nombre;
+        this.descripcion= descripcion;
+        this.precio= precio;
+        this.cantidad=cantidad;
+    }
+}

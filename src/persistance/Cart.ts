@@ -1,16 +1,14 @@
-import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm'
+import {Entity, Column, PrimaryGeneratedColumn} from "typeorm"
 
 @Entity()
-export class Product {
+export default class Carrito {
     @PrimaryGeneratedColumn()
-    id!: number
+    id!: number;
 
     @Column()
-    total!: number
+    carro: string;
 
-    @Column()
-    object!: string
-
-    @Column()
-    image!: string
+    constructor(carro: string ) {
+        this.carro = carro;
+    }
 }

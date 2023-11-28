@@ -1,5 +1,7 @@
 import { DataSource } from "typeorm"
-import { product } from "./Products"
+import  product  from "../src/persistance/Products"
+import  Usuario  from "../src/persistance/User";
+import Carrito from "../src/persistance/Cart";
 
 export const AppDataSource = new DataSource({
     type: 'mysql',
@@ -9,7 +11,7 @@ export const AppDataSource = new DataSource({
     database: 'rigadb',
     synchronize: true,
     logging: true,
-    entities: [product],
+    entities: [product, Usuario, Carrito],
     subscribers: [],
     migrations: []
 });
